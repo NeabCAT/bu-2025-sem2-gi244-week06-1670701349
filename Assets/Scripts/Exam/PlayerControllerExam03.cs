@@ -23,7 +23,7 @@ public class PlayerControllerExam03 : MonoBehaviour
 
     private void Start()
     {
-        nextSpawnTime = Time.time;    
+        nextSpawnTime = Time.time;
     }
 
     // Update is called once per frame
