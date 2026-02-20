@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerControllerExam06 : MonoBehaviour
 {
@@ -30,10 +31,13 @@ public class PlayerControllerExam06 : MonoBehaviour
         if (movementAxis == MovementAxis.Horizontal)
         {
             transform.Translate(horizontalInput * speed * Time.deltaTime * Vector3.right);
+
         }
         else if (movementAxis == MovementAxis.Vertical)
         {
             transform.Translate(verticalInput * speed * Time.deltaTime * Vector3.forward);
         }
+
+       
     }
 }

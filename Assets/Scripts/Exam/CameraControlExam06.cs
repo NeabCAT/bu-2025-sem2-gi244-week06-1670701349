@@ -14,5 +14,15 @@ public class CameraControlExam06 : MonoBehaviour
         Vector3 player2Pos = player2.transform.position;
 
         // Student code ...
+        Vector3 centerPoint = (player1Pos + player2Pos) / 2f;
+        transform.position = new Vector3 (centerPoint.x,centerPoint.y,transform.position.z);
+
+        float distance = Vector3.Distance (player1Pos,player2Pos);
+        targetCamera.orthographicSize = (distance/2f) * offset ;
+
+
+
+
+
     }
 }

@@ -38,9 +38,25 @@ public class PlayerControllerExam05 : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
-        if (shootAction.triggered)
+        if (maxBulletCount < 10) 
         {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
+            bulletRegenerateCooldown -= Time.deltaTime;
+            if (bulletRegenerateCooldown < 0)
+            {
+                maxBulletCount++;
+                bulletRegenerateCooldown = 1f;
+            }
         }
+
+        if (maxBulletCount > 0 )
+        {
+            if (shootAction.triggered)
+            {
+                Instantiate(projectilePrefab, transform.position, transform.rotation);
+                maxBulletCount--;
+            }
+            
+        }
+
     }
 }

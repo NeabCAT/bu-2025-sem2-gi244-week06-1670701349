@@ -17,6 +17,15 @@ public class WaveSpawnManagerExam04 : MonoBehaviour
 
     void Update()
     {
+        if (enableWaveCycling == true)
+        {
+
+            StartLoop();
+        }
+    }
+
+    void StartLoop()
+    {
         if (currentWave >= waveConfigurations.Length)
         {
             return;
@@ -28,12 +37,17 @@ public class WaveSpawnManagerExam04 : MonoBehaviour
             if (currentWave >= waveConfigurations.Length)
             {
                 Debug.Log("All waves completed!");
+
             }
             else
             {
                 waveController.StartWave(waveConfigurations[currentWave]);
                 waveEndTime = Time.time + waveConfigurations[currentWave].waveInterval;
+                enableWaveCycling = true;
+
             }
         }
     }
-}
+
+    
+ }
